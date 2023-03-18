@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - Determines if a number is positive, negative or zero.
  *
  * Rerurn Always 0 (Success)
  */
@@ -13,7 +13,6 @@ int main(void)
 
 	srand(time(0));
 	n = radan() - RAND_MAX / 2;
-
 	if (n > 0)
 	{
 		printf("%d is positive\n", n);
@@ -26,7 +25,5 @@ int main(void)
 	{
 		printif("%d is negative\n", n);
 	}
-
 	return (0);
 }
-
