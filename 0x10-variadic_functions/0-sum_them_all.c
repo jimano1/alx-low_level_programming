@@ -10,7 +10,7 @@
  **/
 int sum_them_all(const unsigned int n, ...)
 {
-	int j = 0, i = n;
+	int s = 0, i = n;
 	va_list ap;
 
 	if (!n)
@@ -19,9 +19,9 @@ int sum_them_all(const unsigned int n, ...)
 	va_start(ap, n);
 
 	while (i--)
-		j += va_arg(ap, int);
+		s += va_arg(ap, int);
 
 	va_end(ap);
 
-	return (j);
+	return (s);
 }
