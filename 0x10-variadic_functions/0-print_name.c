@@ -11,19 +11,21 @@
  **/
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list ap;
-	unsigned int i;
-	int sum = 0;
+    // Define a variable argument list.
+    va_list ap;
+    // Declare variables to store the sum and index of the current parameter.
+    unsigned int i, sum = 0;
 
-	if (n == 0)
-		return (0);
+    // Initialize the variable argument list.
+    va_start(ap, n);
 
-	va_start(ap, n);
+    // Loop through all the parameters and add them to the sum.
+    for (i = 0; i < n; i++)
+        sum += va_arg(ap, int);
 
-	for (i = 0; i < n; i++)
-		sum += va_arg(ap, int);
+    // Clean up the variable argument list.
+    va_end(ap);
 
-	va_end(ap);
-
-	return (sum);
+    // Return the sum.
+    return (sum);
 }
